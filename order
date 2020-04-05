@@ -27,3 +27,26 @@ reboot
 配置文件地址
 
 //etc/shadowsocks-libev/config.json
+
+
+
+
+安装 wget
+yum -y install wget    ##ContOS Yum 安装 wget
+apt-get install wget   ##Debian Ubuntu 安装 wget
+安装 curl
+apt-get update -y && apt-get install curl -y    ##Ubuntu/Debian 系统安装 Curl 方法
+yum update -y && yum install curl -y            ##Centos 系统安装 Curl 方法
+安装 XZ 压缩工具
+apt-get install xz-utils   #Debian/Ubuntu 安装 XZ 压缩工具命令
+yum install xz    #CentOS 安装 XZ 压缩工具
+更新
+apt-get update  #Debian 更新
+yum update  #CentOS 更新
+
+开始运行 Trojan 安装代码
+代码很简单，三行代码，大家一行一行的复制进去运行，任何问题均有相关提示!
+
+wget -N --no-check-certificate "https://raw.githubusercontent.com/V2RaySSR/Trojansh/master/trojan1.sh" && chmod +x trojan1.sh && ./trojan1.sh
+wget -N --no-check-certificate "https://raw.githubusercontent.com/V2RaySSR/Trojansh/master/trojan2.sh" && chmod +x trojan2.sh && ./trojan2.sh
+wget -N --no-check-certificate "https://raw.githubusercontent.com/V2RaySSR/Trojansh/master/trojan3.sh" && chmod +x trojan3.sh && ./trojan3.sh
