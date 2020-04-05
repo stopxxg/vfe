@@ -2,10 +2,28 @@ wget --no-check-certificate -O shadowsocks-all.sh https://raw.githubusercontent.
 chmod +x shadowsocks-all.sh
 ./shadowsocks-all.sh 2>&1 | tee shadowsocks-all.log
 
-wget -N --no-check-certificate "https://raw.githubusercontent.com/stopxxg/vfe/master/bbr" && chmod +x tcp.sh && ./tcp.sh
+wget --no-check-certificate -O tcp.sh https://raw.githubusercontent.com/stopxxg/vfe/master/tcp.sh
+chmod +x tcp.sh 
+./tcp.sh
 
 sudo -i
 passwd
 sed -i 's/PermitRootLogin no/PermitRootLogin yes/g' /etc/ssh/sshd_config
 sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config
 reboot
+
+卸载
+
+使用root用户登录
+
+./shadowsocks-all.sh uninstall
+常用命令
+
+启动：/etc/init.d/shadowsocks-libev start
+停止：/etc/init.d/shadowsocks-libev stop
+重启：/etc/init.d/shadowsocks-libev restart
+查看状态：/etc/init.d/shadowsocks-libev status
+
+配置文件地址
+
+//etc/shadowsocks-libev/config.json
