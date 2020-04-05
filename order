@@ -3,3 +3,9 @@ chmod +x shadowsocks-all.sh
 ./shadowsocks-all.sh 2>&1 | tee shadowsocks-all.log
 
 wget -N --no-check-certificate "https://raw.githubusercontent.com/stopxxg/vfe/master/bbr" && chmod +x tcp.sh && ./tcp.sh
+
+sudo -i
+passwd
+sed -i 's/PermitRootLogin no/PermitRootLogin yes/g' /etc/ssh/sshd_config
+sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config
+reboot
